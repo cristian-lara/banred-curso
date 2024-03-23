@@ -21,4 +21,8 @@ export class UserService {
       return user;
     });
   }
+
+  findUser(name:string){
+    return this.users.filter(user => user.name === name)
+  }
 }
