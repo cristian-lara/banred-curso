@@ -6,13 +6,13 @@ import { AuthGuard } from '@nestjs/passport';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @UseGuards(AuthGuard('local'))
+  @UseGuards(AuthGuard('jwt'))
   @Get()
   getAllUsers() {
     return this.userService.getUsers();
   }
 
-  @UseGuards(AuthGuard('local'))
+  @UseGuards(AuthGuard('jwt'))
   @Get('/:name')
   findUser(@Param('name') name: string) {
     return this.userService.findUser(name);
