@@ -10,7 +10,7 @@ import { config } from 'src/config';
 @Module({
   imports: [UserModule, PassportModule,
   JwtModule.register({
-    secret: config.jtwSecret,
+    secret: config.jwtSecret,
     signOptions: {expiresIn: '60s'}
   })
   ],
