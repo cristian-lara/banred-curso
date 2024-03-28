@@ -179,12 +179,13 @@
       <button (click)="loginPopUp()" >Login Popup</button>
       <button (click)="logout()">Logout</button>
 
-
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div *ngIf="isAuthenticated">
         {{user | json}}
+        <p>{{user.name}}</p>
+        <img [src]="user.picture" width="30%" height="30%" alt="">
       </div>
     </div>
   </div>
