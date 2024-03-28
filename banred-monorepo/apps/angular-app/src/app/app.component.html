@@ -175,12 +175,17 @@
     <div class="left-side">
 
       <h1>Hello</h1>
-      <button>Login</button>
+      <button (click)="login()" >Login</button>
+      <button (click)="loginPopUp()" >Login Popup</button>
+      <button (click)="logout()">Logout</button>
+
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
-      
+      <div *ngIf="isAuthenticated">
+        {{user | json}}
+      </div>
     </div>
   </div>
 </main>
